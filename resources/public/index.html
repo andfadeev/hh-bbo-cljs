@@ -1,0 +1,401 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="//i-backoffice.hh.ru/favicon/hh.ico?v=2015_09_25">
+    <title>бюджет/счета&#034;Тинькофф&#034;</title>
+    <link rel="stylesheet" href="//i-backoffice.hh.ru/css/__all_af6550cc913363ac52327d026241a623.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <script>
+        window.globalVars = {
+            build: '0.0.123' || '',
+            lang: 'RU' || 'RU',
+            staticHost: '//i-backoffice.hh.ru',
+            siteId: '1' || 1,
+            banners: [],
+            bannersComplete: [],
+            unpackedJs: false,
+            requirejsWaitSeconds: 15
+        }
+    </script>
+    <!--<script src="//i-backoffice.hh.ru/js/min/__8a47e094f9c8df2a17b8d47d8fe16c43.js"></script>-->
+</head>
+<body class="backoffice">
+<div class="layout">
+    <div>
+        <div class="admin-menu">
+            <script data-name="HH/Bloko/Toggle" data-params='
+                        {
+                        "expandClass": "admin-menu_opened",
+                        "closeByClick": true
+                        }
+                    '></script>
+            <ul class="adminmenu">
+                <li class="b-menu-item"><p class="b-menu-item-header"><a href="/admin/search.do" data-qa="admin-menu-link_full_search">поиск</a></p>
+
+
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">персональное</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/changepassword" data-qa="admin-menu-link_change_pswd">Изменить пароль</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">работодатели</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/employers/new.do" data-qa="admin-menu-link_new_empl_list">новые работодатели</a></li>
+                        <li><a href="/admin/employers/list.do" data-qa="admin-menu-link_show_all">показать все</a></li>
+                        <li><a href="/admin/employers/list.do?type=0" data-qa="admin-menu-link_empl_companies">прямые работодатели</a></li>
+                        <li><a href="/admin/employers/list.do?type=1" data-qa="admin-menu-link_empl_agencies">агентства</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">реклама</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/banners" data-qa="admin-menu-link_Banners">Баннеры</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">администрирование</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/billing/selleraccountlist.mvc" data-qa="admin-menu-link_payer_details">реквизиты</a></li>
+                        <li><a href="/admin/trl/" data-qa="admin-menu-link_translation_edit">Сообщения</a></li>
+                        <li><a href="/admin/mailTemplates.do" data-qa="admin-menu-link_mail_template">шаблоны писем</a></li>
+                        <li><a href="/admin/filemanager.mvc" data-qa="admin-menu-link_file_manager">файлменеджер</a></li>
+                        <li><a href="/admin/scheduling.mvc" data-qa="admin-menu-link_scheduling">Расписание задач</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">CRM</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/myEvents.do" data-qa="admin-menu-link_my_events">Мои события</a></li>
+                        <li><a href="/admin/myEmployersEvents.do" data-qa="admin-menu-link_empl_events">События в моих компаниях</a></li>
+                        <li><a href="/admin/events/stat.do" data-qa="admin-menu-link_stat">отчет по событиям</a></li>
+                        <li><a href="/admin/mydaysoff.mvc?userId=30092282" data-qa="admin-menu-link_days_off">Мои отпуска</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">пользователи</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/editusertags.mvc" data-qa="admin-menu-link_user_tags">usertags</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">статистика</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/statistics/resumes.do" data-qa="admin-menu-link_resume_stat">резюме</a></li>
+                        <li><a href="/admin/statistics/vacancies.do" data-qa="admin-menu-link_vacancy_stat">вакансии</a></li>
+                        <li><a href="/admin/statistics/employerstat.mvc" data-qa="admin-menu-link_empl_stat">работодатели</a></li>
+                        <li><a href="/admin/employer/statistics/viewedresumes.mvc?byEmployer" data-qa="admin-menu-link_resume_view_history">Статистика
+                            по истории просмотра резюме</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">биллинг</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/bills/list.do?paymentStatus=0&amp;order=date" data-qa="admin-menu-link_not_payed">неоплаченные</a></li>
+                        <li><a href="/admin/deeds/stat.do" data-qa="admin-menu-link_deeds_statistic">акты</a></li>
+                        <li><a href="/admin/billing/deeds-unloading/history.mvc" data-qa="admin-menu-link_deed_unloading">выгрузка актов (новая)</a>
+                        </li>
+                        <li><a href="/admin/paymentList.do" data-qa="admin-menu-link_payment_statistic">счета/платежи</a></li>
+                        <li><a href="/admin/billing/template/list.mvc" data-qa="admin-menu-link_billingTemplateView">Актуальные шаблоны</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">Система</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="/admin/settings/services.mvc" data-qa="admin-menu-link_dynamic_settings">Динамические настройки</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">CMS</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="http://cms.hh.ru/articles" data-qa="admin-menu-link_article">Статьи</a></li>
+                        <li><a href="http://cms.hh.ru/file" data-qa="admin-menu-link_file">Галерея</a></li>
+                    </ul>
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header"><a href="http://backoffice.hh.ru/complete_resume/orders"
+                                                                         data-qa="admin-menu-link_complete_resume">Готовое резюме</a></p>
+
+
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header"><a href="http://backoffice.hh.ru/profiles"
+                                                                         data-qa="admin-menu-link_profiles_moderation">Модерация профилей</a></p>
+
+
+                </li>
+                <li class="b-menu-item"><p class="b-menu-item-header">Банк зарплат</p>
+
+                    <ul class="b-menu-submenu">
+                        <li><a href="http://backoffice.hh.ru/salarystat/reports" data-qa="admin-menu-link_salarystat_reports">Внутренние отчеты</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="admin-menu-switcher" data-qa="admin-menu-switcher" data-toggle=""></div>
+        </div>
+    </div>
+    <div class="layout__col">
+        <div class="layout__panel layout__panel_fixed">
+            <div class="bloko-columns-wrapper">
+                <div class="bloko-column bloko-column_xs-4 bloko-column_s-8 bloko-column_m-12 bloko-column_l-16">
+                    <ul class="top-menu">
+                        <li class="top-menu_item"><a href="https://hh.ru">Главная</a></li>
+                        <li class="top-menu_item"><a href="https://hh.ru/search/vacancy/advanced">Поиск вакансий</a></li>
+                        <li class="top-menu_item"><a href="https://hh.ru/search/resume/advanced">Поиск резюме</a></li>
+                        <li class="top-menu_item"><a href="https://hh.ru/employers_list">Поиск компаний</a></li>
+                        <li class="top-menu_item"><a href="https://hh.ru/article/2067">Описание услуг</a></li>
+                        <li class="top-menu_item"><a href="https://hh.ru/price">Прайс</a></li>
+                        <li class="top-menu_item"><span class="link-plain">Отключить прилипание<script data-name="HH/CookieSwitcher" data-params='
+                                {
+                                    "cookieName": "staticMenu",
+                                    "expire": 8760,
+                                    "reload": true
+                                }
+                            '></script></span></li>
+                    </ul>
+                    <ul class="top-menu top-menu__right">
+                        <li class="top-menu_item">
+                            <form action="/account/logout" method="post">
+                                <button type="submit" class="link-plain">Выйти</button>
+                                <input type="hidden" name="_xsrf" value="3db20a33110f48eab438d39ba80c1ec2"></form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Bloko-Notification-Manager notification-manager"></div>
+        <div class="layout__content-wrapper">
+            <div class="paddings"></div>
+            <div class="bloko-columns-wrapper">
+                <div class="bloko-column bloko-column_xs-4 bloko-column_s-8 bloko-column_m-12 bloko-column_l-16 bloko-column_container">
+                    <div class="b-page-errors"></div>
+
+
+                    <script type="text/javascript" src="https://i-backoffice.hh.ru/js/Legacy/main.js"></script>
+                    <script type="text/javascript" language="javascript">
+                        function addMoneyToEmployer() {
+                            window.open("/admin/billing/popup/admin_add_money.jspx", "AdminAddMoney", "width=500,height=300");
+                        }
+
+                        function submitAddMoney() {
+                            HHOld.doClick('положить денег');
+                        }
+
+                        function enableWhiteBuh() {
+                            HHOld.doClick('включить ньюбух')
+                        }
+                    </script>
+
+                    <form name="AdminEmployerAccountForm" id="form" method="post" action="/admin/employer/account.do">
+                        <input type="hidden" name="accountId" value="9404">
+                        <input type="hidden" name="addMoney" value="" id="addMoney">
+                        <input type="hidden" name="addMailings" value="0" id="addMailings">
+                        <input type="hidden" name="addVacancyPosts" value="0" id="addVacancyPosts">
+                        <input type="hidden" name="addVacancyColorNumber" value="0" id="addVacancyColorNumber">
+                        <input type="hidden" name="addBannerShowNumber" value="0" id="addBannerShowNumber">
+                        <input type="hidden" name="addPeriod" value="0" id="addPeriod">
+                        <input type="hidden" name="addType" value="0" id="addType">
+                        <input type="hidden" name="addResumeSelectorNumber" value="0" id="addResumeSelectorNumber">
+                        <input type="hidden" name="addVacancyDescribeNumber" value="0" id="addVacancyDescribeNumber">
+                        <input type="hidden" name="addAnonymousVacancyPosts" value="0" id="addAnonymousVacancyPosts">
+                        <input type="hidden" name="addAdvertisingVacancyPosts" value="0" id="addAdvertisingVacancyPosts">
+                        <input type="hidden" name="serviceId" value="0" id="serviceId">
+                        <input type="hidden" name="billId" value="0" id="billId">
+                        <input type="hidden" name="agreementId" value="0" id="agreementId">
+                        <input type="hidden" name="action" value="" id="action">
+
+                        <input type="hidden" name="newServiceName" value="" id="newServiceName">
+                        <input type="hidden" name="newServicePrice" value="" id="newServicePrice">
+                        <input type="hidden" name="newServicePeriod" value="0" id="newServicePeriod">
+                        <input type="hidden" name="newServiceType" value="0" id="newServiceType">
+                        <input type="hidden" name="newServiceMailingNumber" value="0" id="newServiceMailingNumber">
+                        <input type="hidden" name="newServiceVacancyPostNumber" value="0" id="newServiceVacancyPostNumber">
+                        <input type="hidden" name="newServiceVacancyAnonimousPostNumber" value="0" id="newServiceVacancyAnonimousPostNumber">
+                        <input type="hidden" name="newServiceVacancyAdvertisingPostNumber" value="0" id="newServiceVacancyAdvertisingPostNumber">
+                        <input type="hidden" name="newServiceVacancyColorNumber" value="0" id="newServiceVacancyColorNumber">
+                        <input type="hidden" name="newServiceBannerShowNumber" value="0" id="newServiceBannerShowNumber">
+                        <input type="hidden" name="newServiceResumerSelectorNumber" value="0" id="newServiceResumerSelectorNumber">
+                        <input type="hidden" name="newServiceVacancyDescribeNumebr" value="0" id="newServiceVacancyDescribeNumebr">
+                        <input type="hidden" name="newServiceHHONumber" value="0" id="newServiceHHONumber">
+                        <input style="display: none;" type="checkbox" name="newServiceNoCreateDeed" id="newServiceNoCreateDeed"/>
+
+
+                        <h1 class="b-title">
+                            <script data-name="HH/Admin/EmployerBillPrint" data-params=""></script>
+                            бюджет / счета
+                        </h1>
+
+
+                        <table class="l-content-3colums b-vacancy-controls-area b-vacancy-controls-menu">
+                            <tr>
+                                <td class="l-content-colum-1">
+                                    <ul class="l-content-paddings">
+                                        <li><a href="/admin/employer.do?employerId=9404">страница работодателя</a></li>
+                                        <li><a href="/admin/employerManagers.do?employerId=9404">контактные лица</a></li>
+                                        <li><a href="/admin/vacancyModerator/employer/vacancyes.do?employer.employerId=9404">вакансии</a></li>
+                                        <li><a href="/admin/vacancyModerator/employer/archivedVacancyes.do?employer.employerId=9404">архив
+                                            вакансий</a></li>
+                                        <li><a href="/admin/employerEdit.do?employerId=9404">изменить описание</a></li>
+                                        <li><a href="/admin/employer/logothumbnails.mvc?employerid=9404">Логотипы работодателя</a></li>
+                                        <li><a href="/employer/job-stats?employerId=9404">Статистика работодателя</a></li>
+                                    </ul>
+                                </td>
+                                <td class="l-content-colum-2">
+                                    <ul class="l-content-paddings">
+                                        <li><a href="/admin/events.do?employerId=9404">События</a></li>
+                                        <li><a href="/employer/quota.mvc?employer=9404">Квоты</a></li>
+                                        <li><a href="/admin/employertemplate.mvc?employerId=9404">шаблоны работодателя</a></li>
+                                        <li><a href="/admin/employer/departments.mvc?employerId=9404">департаменты</a></li>
+                                    </ul>
+                                </td>
+                                <td class="l-content-colum-3">
+                                    <ul class="l-content-paddings">
+                                        <li><a href="/admin/employer/account.do?accountId=9404">бюджет / счета</a></li>
+                                        <li><a href="/admin/employerdeeds.mvc?employerId=9404">акты по компании</a></li>
+                                        <li><a href="/admin/billing/employer/agreements.do?accountId=9404">договоры</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="b-subtitle">
+                            Тинькофф
+                        </h3>
+
+                        <table class="b-forma-table">
+                            <tr>
+                                <td class="b-forma-narrowcell">
+                                    <label class="b-forma-label">
+                                        <span class="b-forma-box">
+              Дата регистрации
+            </span>
+                                    </label>
+                                </td>
+                                <td class="b-forma-widecell" style="padding: 1em 0 0 0;">
+                                    28.04.2005
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+
+                        <table class="l-content-3colums b-vacancy-controls-area b-vacancy-controls-menu">
+                            <tr>
+                                <td class="l-content-colum-1">
+                                    <ul class="l-content-paddings">
+                                        <li>
+                                            <a href="/admin/addservices.mvc?id=9404">добавить услуг</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="l-content-colum-1">
+                                    <ul class="l-content-paddings">
+                                        <li>
+                                            <a href="/admin/writeoffservicenew.mvc?account_id=9404">списать деньги2</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="l-content-colum-1">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="b-subtitle">Основная информация</h3>
+
+                        <table class="b-forma-table">
+                            <tr>
+                                <td class="b-forma-narrowcell">
+                                    <label class="b-forma-label">
+          <span class="b-forma-box">
+            Лицевой счет
+          </span>
+                                    </label>
+                                </td>
+                                <td class="b-forma-widecell">
+                                    <span class="Money-Amount" id="">0</span> <span class="Money-Currency">руб.</span>
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <h3 class="b-subtitle">Заказанные и оплаченные услуги</h3>
+                        <div class="l-content-paddings">
+                            <ul class="b-admin-employerservices"></ul>
+                        </div>
+                        <table class="b-forma-table">
+                            <tr>
+                                <td class="b-forma-narrowcell"><label class="b-forma-label"><span
+                                        class="b-forma-box">Бесплатные публикации вакансий</span></label>
+                                    <div class="g-clear b-forma-hint">Вакансии можно разместить в Беларуси, в Казахстане, в Украине, в Азербайджане и
+                                        по всей России, кроме Москвы, Санкт-Петербурга, их областей. Также бесплатные вакансии нельзя опубликовать в
+                                        одиннадцати городах и восьми областях: Нижний Новгород, Самара, Краснодар, Новосибирск, Владивосток, Воронеж,
+                                        Ростов, Екатеринбург, Казань, Волгоград и Ярославль; Белгородская, Калужская, Кировская, Курская, Орловская,
+                                        Ростовская, Тульская область и Краснодарский край.
+                                    </div>
+                                </td>
+                                <td class="b-forma-widecell">
+                                    10
+                                </td>
+                                <td class="b-forma-widecell">
+                                    <div class="b-forma-hint">Новые добавятся 28/02/2015</div>
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                        <h3 class="b-subtitle">
+                            История пополнения
+                        </h3>
+
+                        <table name="paymentHistory" class="b-admin-table">
+                            <tr>
+                                <th style="padding-left: 4px;">
+                                    оригинал
+                                </th>
+                                <th>
+                                    создан
+                                </th>
+                                <th>
+                                    оплачен
+                                </th>
+                                <th>
+                                    сумма
+                                </th>
+                                <th>
+                                    тип
+                                </th>
+                                <th>
+                                    номер
+                                </th>
+
+                                <th>
+
+                                </th>
+                                <th colspan="4">
+                                    автор
+                                </th>
+                            </tr>
+
+
+                        </table>
+
+                        <div id="app"></div>
+
+
+                        </form>
+                    <div class="footer">© 2017 HeadHunter</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/compiled/app.js"></script>
+<script>hh_bbo_cljs.core.init();</script>
+</body>
+</html>
