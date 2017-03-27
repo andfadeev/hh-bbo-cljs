@@ -15,7 +15,8 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
   :figwheel {:css-dirs ["resources/public/css"]}
   :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.9"]
-                                  [binaryage/devtools "0.8.2"]]}}
+                                  [binaryage/devtools "0.8.2"]]
+                   :plugins [[lein-figwheel "0.5.9"]]}}
   :cljsbuild {:builds
               [{:id "dev"
                 :source-paths ["src/cljs"]
